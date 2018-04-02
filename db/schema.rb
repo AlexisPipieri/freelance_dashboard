@@ -10,10 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402160001) do
+ActiveRecord::Schema.define(version: 20180402170738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "email"
+    t.bigint "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_contacts_on_organization_id"
+  end
+
+  create_table "missions", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
+    t.bigint "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_missions_on_organization_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -32,4 +59,6 @@ ActiveRecord::Schema.define(version: 20180402160001) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contacts", "organizations"
+  add_foreign_key "missions", "organizations"
 end
