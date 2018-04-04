@@ -1,17 +1,18 @@
-<h2><%= @organization.name %></h2>
-<p><%= @organization.address %></p>
+<div class="container">
+  <h2><%= @organization.name %></h2>
+  <p><%= @organization.address %></p>
 
-<ul>
-  <% @organization.contacts.each do |contact| %>
-    <li>
-      <%= contact.first_name %>
-      <%= contact.last_name %>
-      <%= contact.phone_number %>
-      <%= contact.email %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Delete", organization_path(@organization),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<%= link_to "Ajouter un nouveau contact", new_organization_contact_path(@organization) %>
+  <ul>
+    <% @organization.contacts.each do |contact| %>
+      <li>
+        <%= contact.first_name %>
+        <%= contact.last_name %>
+        <%= contact.phone_number %>
+        <%= contact.email %>
+      </li>
+    <% end %>
+  </ul>
+  <%= link_to "Delete", organization_path(@organization),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+</div>

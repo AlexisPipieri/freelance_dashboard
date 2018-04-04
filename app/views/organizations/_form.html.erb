@@ -1,7 +1,10 @@
-<%= simple_form_for(@organization) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <%= simple_form_for(@organization) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= hidden_field_tag 'contact_id', params[:contact_id] %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>

@@ -1,11 +1,13 @@
-<%= simple_form_for [@organization, @contact] do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <%= simple_form_for(@contact) do |f| %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :phone_number %>
+      <%= f.input :email %>
+      <%= f.association :organization, include_blank: 'Create a new one' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
+

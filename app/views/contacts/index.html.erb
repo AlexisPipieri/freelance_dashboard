@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Ma liste de contacts</h1>
+  <%= link_to "Ajouter un nouveau contact", new_contact_path %>
+  <% @contacts.each do |contact| %>
+    <p><%= contact.first_name %></p>
+  <% end %>
+</div>
