@@ -14,6 +14,7 @@ class OrganizationsController < ApplicationController
 
   def create
     @organization = Organization.new(organization_params)
+    @organization.user = current_user
     @contact = Contact.find(params[:contact_id])
     @contact.organization = @organization
     if @organization.save

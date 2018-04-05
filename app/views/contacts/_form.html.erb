@@ -5,7 +5,8 @@
       <%= f.input :last_name, label: 'Nom' %>
       <%= f.input :phone_number, label: 'Numéro de téléphone' %>
       <%= f.input :email %>
-      <%= f.association :organization, label: 'Entreprise', include_blank: 'Créer une nouvelle entreprise' %>
+      <%= f.association :organization, collection: @organization_list,
+      label: 'Entreprise', include_blank: 'Créer une nouvelle entreprise' %>
       <%= f.submit 'Créer' %>
     <% end %>
   </div>

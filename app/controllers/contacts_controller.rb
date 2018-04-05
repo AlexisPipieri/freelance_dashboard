@@ -6,15 +6,20 @@ class ContactsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
-    # @organization = Organization.find(params[:organization_id])
     @contact = Contact.new
+    @organization_list = Organization.where(user: current_user)
   end
 
   def create
     @contact = Contact.new(contact_params)
+    @contact.user = current_user
     if @contact.save
       if contact_params[:organization_id].empty?
         redirect_to new_organization_path(contact_id: @contact.id)
