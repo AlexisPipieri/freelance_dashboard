@@ -2,24 +2,35 @@
   <h1>Ma liste de contacts</h1>
   <%= link_to "Ajouter un nouveau contact", new_contact_path %>
 
-  <div id="left-side">
+  <div id="contacts-wrapper">
     <% if current_user.contacts.empty? %>
-      <p>Vous n'avez pas encore ajouté de contacts</p>
+      <h2>Ajoutez vos premiers contacts</h2>
     <% else %>
-      <% current_user.contacts.each do |contact| %>
-        <%= link_to contact_path(contact), remote:true do %>
-          <div class="card">
-            <p><%= contact.first_name %> <%= contact.last_name %></p>
-            <p><%= contact.organization.name %></p>
-          </div>
-        <% end %>
-      <% end %>
-    <% end %>
+      <div id="contacts-list">
+        <div class="card">
+          <% current_user.contacts.each do |contact| %>
+            <div class="contact">
+              <%= link_to contact_path(contact), remote:true do %>
+                <div class="contact-list-preview">
+                  <div class="contact-list-name">
+                    <%= contact.first_name %> <%= contact.last_name %>
+                  </div>
+                  <div class="contact-list-org">
+                    <%= contact.organization.name %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <div id="contacts-show">
+      <div class="card">
+        <div id="contact-details">
 
-  </div>
-  <div id="right-side">
-    <div class="card">
-
+        </div>
+      </div>
     </div>
+    <% end %>
   </div>
 </div>

@@ -1,1 +1,6 @@
-<%= Hello %>
+function refreshContact(innerHTML) {
+  const contactShow = document.getElementById('contact-details');
+  contactShow.innerHTML = innerHTML;
+}
+
+refreshContact('<%= j render "contacts/show_partial", contact: @contact %>');

@@ -1,3 +1,42 @@
-#left-side {
-  width: 25vw;
+#contacts-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+#contacts-list {
+  flex: 0 0 28%;
+}
+
+#contacts-show {
+  flex: 0 0 68%;
+}
+
+.contact {
+  padding: 20px 10px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  a {
+    text-decoration: none;
+    color: gray;
+  }
+}
+.contact:first-child {
+  padding-top: 0;
+}
+.contact:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.contact-list-preview {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-list-org{
+  opacity: 0.8;
+}
+
+.contact-contacts {
+  a {
+    text-decoration: none;
+    color: gray;
+  }
 }
