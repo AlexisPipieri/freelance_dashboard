@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="card">
+    <div class="text-center">
+      <div class="contact-name">
+        <h2>
+          <%= @contact.first_name %> <%= @contact.last_name %>
+        </h2>
+      </div>
+      <div class="contact-org">
+        <h3>
+          <%= @contact.organization.name %>
+        </h3>
+      </div>
+      <div class="contact-contacts">
+        <p>
+          <%= mail_to @contact.email, @contact.email %>
+        </p>
+        <p>
+          <%= link_to @contact.phone_number, "tel:#{@contact.phone_number}" %>
+        </p>
+      </div>
+
+      <div id="actions">
+        <%= render 'notes/form', contact: @contact, note: @note %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,7 +1,6 @@
-class CreateActions < ActiveRecord::Migration[5.1]
+class CreateNotes < ActiveRecord::Migration[5.1]
   def change
-    create_table :actions do |t|
-      t.string :date
+    create_table :notes do |t|
       t.text :description
       t.references :contact, foreign_key: true
 

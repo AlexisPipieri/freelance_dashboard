@@ -6,8 +6,8 @@ class ContactsController < ApplicationController
   end
 
   def show
+    @note = Note.new
     respond_to do |format|
-      @action = Action.new
       format.html
       format.js
     end
@@ -30,6 +30,9 @@ class ContactsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
   end
 
 
