@@ -20,12 +20,13 @@
 
   <div id="actions">
     <% if @contact.actions.blank? %>
-      Add an action for <%= @contact.first_name %> <%= @contact.last_name %>
+      Ajouter une note pour <%= @contact.first_name %> <%= @contact.last_name %>
     <% else %>
       <% @contact.actions.each do |action| %>
         <%= render 'actions/show', action: action %>
       <% end %>
     <% end %>
+    <%= render 'actions/form', contact: @contact, action: @action %>
   </div>
 
 </div>

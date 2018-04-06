@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   # end
   # get "contacts", to: "contacts#index"
   resources :organizations
-  resources :contacts
+  resources :contacts do
+    resources :actions, only: :create
+  end
 end

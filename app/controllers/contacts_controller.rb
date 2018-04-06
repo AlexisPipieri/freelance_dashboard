@@ -7,6 +7,7 @@ class ContactsController < ApplicationController
 
   def show
     respond_to do |format|
+      @action = Action.new
       format.html
       format.js
     end
