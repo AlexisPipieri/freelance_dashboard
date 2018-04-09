@@ -1,4 +1,4 @@
-<%= simple_form_for([ contact, note ]) do |f| %>
+<%= simple_form_for([ contact, note ], remote: true) do |f| %>
   <%#= f.input :date, as: :string, input_html: {class: "datepicker"} %>
   <%= f.input :description, as: :text %>
   <%= f.button :submit, "Ajouter cette note" %>

@@ -5,6 +5,14 @@
 
 #contacts-list {
   flex: 0 0 28%;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
+  margin: 20px 0;
+  a {
+    text-decoration: none;
+    color: gray;
+  }
 }
 
 #contacts-show {
@@ -12,24 +20,16 @@
 }
 
 .contact {
-  padding: 20px 10px;
+  padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
-  a {
-    text-decoration: none;
-    color: gray;
-  }
-}
-.contact:first-child {
-  padding-top: 0;
-}
-.contact:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-.contact-list-preview {
   display: flex;
   justify-content: space-between;
 }
+
+.contact:last-child {
+  border-bottom: none;
+}
+
 .contact-list-org{
   opacity: 0.8;
 }
@@ -39,4 +39,9 @@
     text-decoration: none;
     color: gray;
   }
+}
+
+// Selected contact in the list
+.active-contact {
+  background-color: #FCFCFD;
 }

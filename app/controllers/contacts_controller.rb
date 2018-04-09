@@ -25,7 +25,7 @@ class ContactsController < ApplicationController
       if contact_params[:organization_id].empty?
         redirect_to new_organization_path(contact_id: @contact.id)
       else
-        redirect_to contact_path(@contact)
+        redirect_to contacts_path
       end
     else
       render :new

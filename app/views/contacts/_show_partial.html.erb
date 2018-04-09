@@ -19,7 +19,7 @@
       </p>
     </div>
 
-    <div id="notes">
+    <div id="contact-notes">
       <% if @contact.notes.blank? %>
         Ajouter une note pour <%= @contact.first_name %> <%= @contact.last_name %>
       <% else %>
@@ -27,6 +27,8 @@
           <%= render 'notes/show', note: note %>
         <% end %>
       <% end %>
+    </div>
+    <div id="contact-notes-form">
       <%= render 'notes/form', contact: @contact, note: @note %>
     </div>
 
