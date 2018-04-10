@@ -22,7 +22,7 @@
           </div>
         <% else %>
           <% @contacts.each do |contact| %>
-            <%= link_to contact_path(contact), class: "contact", remote:true do %>
+            <%= link_to contact_path(contact), class: (contact == @contacts.first ? 'contact active-contact' : 'contact'), remote:true do %>
               <div class="contact-list-name">
                 <%= contact.first_name %> <%= contact.last_name %>
               </div>
