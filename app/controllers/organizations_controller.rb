@@ -19,7 +19,7 @@ class OrganizationsController < ApplicationController
     @contact.organization = @organization
     if @organization.save
       @contact.save
-      redirect_to organization_path(@organization)
+      redirect_to contacts_path
     else
       render :new
     end

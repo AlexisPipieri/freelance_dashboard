@@ -4,7 +4,8 @@
 }
 
 #contacts-list {
-  flex: 0 0 28%;
+  flex: 0 0 30%;
+  align-self: flex-start; //prevents the flexbox to expands its height
   background-color: white;
   border-radius: 3px;
   box-shadow: 0 4px 6px 0 hsla(0, 0%, 0%, 0.2);
@@ -16,7 +17,7 @@
 }
 
 #contacts-show {
-  flex: 0 0 68%;
+  flex: 0 0 60%;
 }
 
 .contact {
@@ -45,3 +46,13 @@
 .active-contact {
   background-color: #FCFCFD;
 }
+
+// Search contact
+.search-form-contact {
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+#input-search-contact {
+  border-radius: 3px;
+}
+

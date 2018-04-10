@@ -10,27 +10,24 @@
         <%= @contact.organization.name %>
       </h3>
     </div>
-    <div class="contact-contacts">
-      <p>
-        <%= mail_to @contact.email, @contact.email %>
-      </p>
-      <p>
-        <%= link_to @contact.phone_number, "tel:#{@contact.phone_number}" %>
-      </p>
-    </div>
-
-    <div id="contact-notes">
-      <% if @contact.notes.blank? %>
-        Ajouter une note pour <%= @contact.first_name %> <%= @contact.last_name %>
-      <% else %>
-        <% @contact.notes.each do |note| %>
-          <%= render 'notes/show', note: note %>
-        <% end %>
-      <% end %>
-    </div>
-    <div id="contact-notes-form">
-      <%= render 'notes/form', contact: @contact, note: @note %>
-    </div>
-
   </div>
+  <div class="contact-contacts">
+    <p>
+      <%= mail_to @contact.email, @contact.email %>
+    </p>
+    <p>
+      <%= link_to @contact.phone_number, "tel:#{@contact.phone_number}" %>
+    </p>
+  </div>
+
+  <div id="contact-notes">
+    <% @contact.notes.each do |note| %>
+      <%= render 'notes/show', note: note %>
+    <% end %>
+  </div>
+  <div id="contact-notes-form">
+    <%= link_to "Ajouter une note...", "#", class:"link-add-note" %>
+    <%= render 'notes/form', contact: @contact, note: @note %>
+  </div>
+
 </div>

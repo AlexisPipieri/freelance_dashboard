@@ -5,7 +5,8 @@ class Contact < ApplicationRecord
   has_many :notes, dependent: :destroy
 
   include PgSearch
-    pg_search_scope :global_search,
+    pg_search_scope :search_contact,
+                    ignoring: :accents,
       against: [ :first_name, :last_name ],
       associated_against: {
         organization: [ :name ]

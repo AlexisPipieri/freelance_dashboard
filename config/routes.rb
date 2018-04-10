@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :actions, only: [ :new, :create ]
     resources :notes, only: [ :new, :create ]
   end
+  get :contacts, to: "contacts#index", as: :search_contacts
 end
