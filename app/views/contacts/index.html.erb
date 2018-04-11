@@ -1,45 +1,49 @@
 <div class="container">
-
-  <div id="contacts-wrapper">
-    <% if current_user.contacts.empty? %>
-      <h2>Ajoutez vos premiers contacts</h2>
+  <% if current_user.contacts.empty? %>
+    <div class="text-center" style="margin-top: 50px;">
+      <h2 style="margin-bottom: 50px;">Ajoutez vos premiers contacts</h2>
       <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn" %>
-    <% else %>
+    </div>
+  <% else %>
 
-      <div id="list-wrapper">
-        <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn" %>
-        <div id="contacts-list">
-          <div class="search-form-contact" >
-            <%= form_tag search_contacts_path, method: :get do %>
-              <%= text_field_tag :q, nil, placeholder: 'Rechercher', class: "form-control" %>
-            <% end %>
-          </div>
+    <div id="contacts-wrapper">
 
-          <% if @contacts.empty? %>
-            <div class="contact">
-              Ce contact n'existe pas encore !
+        <div id="list-wrapper">
+          <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn btn-full-width" %>
+          <div id="contacts-list">
+            <div class="search-form-contact" >
+              <%= form_tag search_contacts_path, method: :get do %>
+                <%= text_field_tag :q, nil, placeholder: 'Rechercher', class: "form-control" %>
+              <% end %>
             </div>
-          <% else %>
-            <% @contacts.each do |contact| %>
-              <%= link_to contact_path(contact), class: (contact == @contacts.first ? 'contact active-contact' : 'contact'), remote:true do %>
-                <div class="contact-list-name">
-                  <%= contact.first_name %> <%= contact.last_name %>
-                </div>
-                <div class="contact-list-org">
-                  <%= contact.organization.name %>
-                </div>
+
+            <% if @contacts.empty? %>
+              <div class="contact">
+                Ce contact n'existe pas encore !
+              </div>
+            <% else %>
+              <% @contacts.each do |contact| %>
+                <%= link_to contact_path(contact), class: (contact == @contacts.first ? 'contact active-contact' : 'contact'), remote:true do %>
+                  <div class="contact-list-name">
+                    <%= contact.first_name %> <%= contact.last_name %>
+                  </div>
+                  <div class="contact-list-org">
+                    <%= contact.organization.name %>
+                  </div>
+                <% end %>
               <% end %>
             <% end %>
+          </div>
+        </div>
+      <div id="contacts-show">
+        <div id="contact-details">
+          <% unless @contacts.empty? %>
+            <% @contact = @contacts.first %>
+            <%= render 'contacts/show_partial' %>
           <% end %>
         </div>
       </div>
-    <div id="contacts-show">
-      <div id="contact-details">
-        <% @contact = @contacts.first %>
-        <%= render 'contacts/show_partial' %>
-      </div>
-    </div>
 
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

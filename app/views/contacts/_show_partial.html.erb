@@ -21,6 +21,7 @@
   </div>
 
   <div id="contact-notes">
+    <strong>Notes</strong>
     <% @contact.notes.each do |note| %>
       <%= render 'notes/show', contact:@contact, note: note %>
     <% end %>

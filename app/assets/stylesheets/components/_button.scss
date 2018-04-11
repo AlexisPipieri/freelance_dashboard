@@ -1,6 +1,5 @@
 .add-contact-btn {
   color: white;
-  width: 100%;
   padding: 10px 15px;
   border-radius: 4px;
   font-weight: normal;
@@ -13,7 +12,9 @@
   text-decoration: none;
   color: white;
 }
-
+.btn-full-width {
+  width: 100%;
+}
 .trash-btn {
   text-decoration: none;
   color: $gray;
