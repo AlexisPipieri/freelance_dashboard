@@ -3,12 +3,11 @@
   <div id="contacts-wrapper">
     <% if current_user.contacts.empty? %>
       <h2>Ajoutez vos premiers contacts</h2>
+      <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn" %>
     <% else %>
 
       <div id="list-wrapper">
-        <!-- <div class="btn add-contact-btn"> -->
-          <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn" %>
-        <!-- </div> -->
+        <%= link_to "Ajouter un nouveau contact", new_contact_path, class:"btn add-contact-btn" %>
         <div id="contacts-list">
           <div class="search-form-contact" >
             <%= form_tag search_contacts_path, method: :get do %>
