@@ -1,7 +1,6 @@
-<div class="hidden" id="note-form">
+<div id="note-form">
   <%= simple_form_for([ contact, note ], remote: true) do |f| %>
-    <%#= f.input :date, as: :string, input_html: {class: "datepicker"} %>
-    <%= f.input :description, as: :text %>
+    <%= f.input :description, as: :text, label: false %>
     <%= f.button :submit, "Ajouter cette note" %>
   <% end %>
 </div>

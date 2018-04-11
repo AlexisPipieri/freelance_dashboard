@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  before_action :set_note, only: [ :destroy]
 
   def create
     @contact = Contact.find(params[:contact_id])
@@ -17,9 +18,17 @@ class NotesController < ApplicationController
     end
   end
 
+  def destroy
+    @note.destroy
+  end
+
   private
 
   def note_params
     params.require(:note).permit(:date, :description)
+  end
+
+  def set_note
+    @note = Note.find(params[:id])
   end
 end

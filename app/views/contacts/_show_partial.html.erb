@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card contact-card">
   <div class="text-center">
     <div class="contact-name">
       <h2>
@@ -22,11 +22,12 @@
 
   <div id="contact-notes">
     <% @contact.notes.each do |note| %>
-      <%= render 'notes/show', note: note %>
+      <%= render 'notes/show', contact:@contact, note: note %>
     <% end %>
   </div>
+  <hr>
   <div id="contact-notes-form">
-    <%= link_to "Ajouter une note...", "#", class:"link-add-note" %>
+    <%#= link_to "Ajouter une note...", "#", id:"link-add-note" %>
     <%= render 'notes/form', contact: @contact, note: @note %>
   </div>
 

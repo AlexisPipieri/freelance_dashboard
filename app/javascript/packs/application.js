@@ -7,7 +7,7 @@ if (document.querySelectorAll(".contact-list-preview")) {
   setActiveContact();
 };
 
-import { showAddNoteForm } from '../components/show_note_form';
-if (document.getElementById("link-add-note")) {
-  showAddNoteForm();
-};
+// import { showAddNoteForm } from '../components/show_note_form';
+// if (document.getElementById("link-add-note")) {
+//   showAddNoteForm();
+// };

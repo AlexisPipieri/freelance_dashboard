@@ -25,6 +25,9 @@
   border-bottom: 1px solid rgba(220,224,244,0.4);
   display: flex;
   justify-content: space-between;
+  &:hover {
+    background-color: #FCFCFD;
+  }
 }
 
 .contact:last-child {
