@@ -1,5 +1,5 @@
 <div id="note-form">
-  <%= simple_form_for([ contact, note ], remote: true) do |f| %>
+  <%= simple_form_for([ contact, note ], method: :post, remote: true) do |f| %>
     <%= f.input :description, as: :text, label: false %>
     <%= f.button :submit, "Ajouter cette note" %>
   <% end %>

@@ -1,4 +1,23 @@
 <div class="container">
-  <h2 class="text-center">Ajouter un nouveau contact</h2>
-  <%= render 'form', contact: @contact %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <div class="form-login">
+        <h2>Ajouter un nouveau contact</h2>
+
+        <%= simple_form_for(@contact) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :first_name, label: 'Prénom' %>
+            <%= f.input :last_name, label: 'Nom' %>
+            <%= f.input :phone_number, label: 'Numéro de téléphone' %>
+            <%= f.input :email %>
+            <%= f.association :organization, collection: @organization_list,
+            label: 'Entreprise', include_blank: 'Créer une nouvelle entreprise' %>
+          </div>
+          <div class="form-actions">
+            <%= f.submit 'Créer', class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,4 +1,6 @@
-<div class="note" data-note-id="<%= note.id %>">
-  <p><%= note.description %></p>
-  <%#= link_to "", contact_note_path(contact, note), method: :delete, remote: true, class: "far fa-trash-alt trash-btn" %>
+<div class="note-wrapper" data-note-id="<%= note.id %>">
+  <div class="note" >
+    <p><%= note.description %></p>
+  </div>
+  <%= link_to "", contact_note_path(@contact, note), class: "far fa-trash-alt trash-btn", method: :delete, remote: true %>
 </div>

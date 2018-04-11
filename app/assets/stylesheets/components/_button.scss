@@ -1,0 +1,23 @@
+.add-contact-btn {
+  color: white;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: normal;
+  background: #00AAFF;
+  transition: background 0.3s ease;
+}
+.add-contact-btn:hover {
+  opacity: 1;
+  background: #009BE8;
+  text-decoration: none;
+  color: white;
+}
+
+.trash-btn {
+  text-decoration: none;
+  color: $gray;
+  &:hover {
+    color: $gray-dark;
+  }
+}
