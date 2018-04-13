@@ -1,0 +1,10 @@
+<h1>Vos devis ici</h1>
+
+
+<% @quotes.each do |quote| %>
+
+  <%= link_to export_pdf_quote_path(quote, format: 'pdf') do %>
+    Save as pdf
+  <% end %>
+
+<% end %>

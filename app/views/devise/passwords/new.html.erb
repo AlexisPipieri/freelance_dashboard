@@ -1,22 +1,24 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <div class="form-login">
-        <h2>Forgot your password?</h2>
+<div class="background-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1460794418188-1bb7dba2720d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d2bfe8be765e57893fa314522a14050c&auto=format&fit=crop&w=1500&q=80');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+        <div class="form-login">
+          <h2>Mot de passe oublié?</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-          <%= f.error_notification %>
+          <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+            <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, placeholder: "creator@mail.com" %>
-          </div>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, placeholder: "creator@mail.com" %>
+            </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Send me reset password instructions", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+            <div class="form-actions">
+              <%= f.button :submit, "Changer mon mot de passe", class: "btn btn-primary" %>
+            </div>
+          <% end %>
 
-        <%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>

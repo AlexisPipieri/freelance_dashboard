@@ -20,3 +20,10 @@
   opacity: 0.6;
   margin-bottom: 30px;
 }
+
+//Background image on login/signup
+.background-banner {
+  // height: 100vh;
+  height: calc(100vh - 70px);
+  background-size: cover !important;
+}

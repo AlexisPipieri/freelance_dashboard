@@ -1,24 +1,26 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <div class="form-login">
-        <h2>Sign up</h2>
+<div class="background-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1460794418188-1bb7dba2720d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d2bfe8be765e57893fa314522a14050c&auto=format&fit=crop&w=1500&q=80');">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+        <div class="form-login">
+          <h2>Sign up</h2>
 
-        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= f.error_notification %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= f.error_notification %>
 
-          <div class="form-inputs">
-            <%= f.input :email, required: true, autofocus: true, placeholder: "user@mail.com" %>
-            <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "••••••" %>
-            <%= f.input :password_confirmation, required: true %>
-          </div>
+            <div class="form-inputs">
+              <%= f.input :email, required: true, autofocus: true, placeholder: "user@mail.com" %>
+              <%= f.input :password, label: 'Mot de passe', required: true, hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length), placeholder: "••••••" %>
+              <%= f.input :password_confirmation, label: 'Confirmation du mot de passe', required: true, placeholder: "••••••" %>
+            </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+            <div class="form-actions">
+              <%= f.button :submit, "Créer un compte", class: "btn btn-primary" %>
+            </div>
+          <% end %>
 
-        <%= render "devise/shared/links" %>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     </div>
   </div>

@@ -19,6 +19,8 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pg_search'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 gem "geocoder"
 
