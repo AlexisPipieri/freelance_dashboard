@@ -10,20 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180413142050) do
+ActiveRecord::Schema.define(version: 20180416160239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "unaccent"
-
-  create_table "actions", force: :cascade do |t|
-    t.string "date"
-    t.text "description"
-    t.bigint "contact_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["contact_id"], name: "index_actions_on_contact_id"
-  end
 
   create_table "contacts", force: :cascade do |t|
     t.string "first_name"
@@ -65,10 +56,23 @@ ActiveRecord::Schema.define(version: 20180413142050) do
   end
 
   create_table "quotes", force: :cascade do |t|
-    t.bigint "mission_id"
+    t.bigint "user_id"
+    t.bigint "organization_id"
+    t.string "emission_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["mission_id"], name: "index_quotes_on_mission_id"
+    t.index ["organization_id"], name: "index_quotes_on_organization_id"
+    t.index ["user_id"], name: "index_quotes_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.text "description"
+    t.integer "unit_price"
+    t.integer "quantity"
+    t.bigint "quote_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["quote_id"], name: "index_tasks_on_quote_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -84,15 +88,21 @@ ActiveRecord::Schema.define(version: 20180413142050) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "phone_number"
+    t.string "siret"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "actions", "contacts"
   add_foreign_key "contacts", "organizations"
   add_foreign_key "contacts", "users"
   add_foreign_key "missions", "organizations"
   add_foreign_key "notes", "contacts"
   add_foreign_key "organizations", "users"
-  add_foreign_key "quotes", "missions"
+  add_foreign_key "quotes", "organizations"
+  add_foreign_key "quotes", "users"
+  add_foreign_key "tasks", "quotes"
 end

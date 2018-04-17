@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :contacts
   has_many :organizations
+  has_many :quotes
 end

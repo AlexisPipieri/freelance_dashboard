@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get "/dashboard", to: "users#dashboard", as: "dashboard"
   get '/dashboard', to: 'pages#dashboard' , as: "dashboard"
 
+  resources :users, only: [:show, :edit, :update]
   resources :organizations
   resources :contacts do
     resources :notes, only: [ :create, :destroy ]

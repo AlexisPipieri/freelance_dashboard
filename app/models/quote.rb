@@ -1,3 +1,5 @@
 class Quote < ApplicationRecord
-  belongs_to :mission
+  belongs_to :user
+  belongs_to :organization
+  has_many :tasks
 end
