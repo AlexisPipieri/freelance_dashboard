@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   get :contacts, to: "contacts#index", as: :search_contacts
 
-  resources :quotes, only: [ :index ] do
+  resources :quotes, only: [ :index, :new, :create ] do
     get :export_pdf, on: :member
   end
 

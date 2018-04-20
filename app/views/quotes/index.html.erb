@@ -1,10 +1,14 @@
-<h1>Vos devis ici</h1>
+<div class="container">
+  <h1>Vos devis ici</h1>
+
+  <%= link_to "Nouveau devis", new_quote_path %>
 
 
-<% @quotes.each do |quote| %>
+  <% @quotes.each do |quote| %>
 
-  <%= link_to export_pdf_quote_path(quote, format: 'pdf') do %>
-    Save as pdf
+    <%= link_to export_pdf_quote_path(quote, format: 'pdf') do %>
+      Save as pdf
+    <% end %>
+
   <% end %>
-
-<% end %>
+</div>

@@ -1,0 +1,42 @@
+users:
+  - email: "alexis@email.com"
+    password: "123456"
+    first_name: Alexis
+    last_name: Pipieri
+    address: "232 Boulevard Voltaire 75011 Paris"
+    phone_number: "0684031384"
+    siret: "80073257000026"
+organizations:
+  - name: "Le Wagon"
+    address: "16 Villa Gaudelet 75011 Paris"
+    user: "alexis@email.com"
+  - name: "Comet"
+    address: "47 Rue Popincourt, 75011 Paris"
+    user: "alexis@email.com"
+contacts:
+  - first_name: Edouard
+    last_name: Foussier
+    phone_number: "0102030405"
+    email: "edouard@lewagon.com"
+    organization: "Le Wagon"
+    user: "alexis@email.com"
+  - first_name: Boris
+    last_name: Paillard
+    phone_number: "0102030405"
+    email: "boris@lewagon.com"
+    organization: "Le Wagon"
+    user: "alexis@email.com"
+  - first_name: Alexis
+    last_name: Torelli
+    phone_number: "0102030405"
+    email: "alexis@hellocomet.com"
+    organization: "Comet"
+    user: "alexis@email.com"
+notes:
+  - description: "Call le 01/04/18"
+    contact: "edouard@lewagon.com"
+  - description: "Intéressé pour travailler ensemble"
+    contact: "edouard@lewagon.com"
+
+
+

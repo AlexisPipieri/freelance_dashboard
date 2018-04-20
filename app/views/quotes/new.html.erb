@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <div class="form-login">
+        <h2>Créer un nouveau devis</h2>
+
+        <%= simple_form_for(@quote) do |f| %>
+          <div class="form-inputs">
+            <%= f.association :organization, collection: @organization_list,
+            label: 'Entreprise', include_blank: 'Créer une nouvelle entreprise' %>
+
+            <h3>Ajouter une tâche</h3>
+            <%= f.simple_fields_for :tasks do |t| %>
+              <%= t.input :description %>
+              <%= t.input :unit_price %>
+              <%= t.input :quantity %>
+            <% end %>
+          </div>
+          <div class="form-actions">
+            <%= f.submit 'Créer', class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,18 @@
 class QuotesController < ApplicationController
-  before_action :set_quote, only: [:export_pdf]
+  before_action :set_quote, only: [ :export_pdf]
 
   def index
     @quotes = Quote.all
+    @organization_list = Organization.where(user: current_user)
   end
 
   def new
-    @contact = Contact.new
+    @quote = Quote.new
     @organization_list = Organization.where(user: current_user)
   end
 
   def create
-    @contact = Contact.new(contact_params)
-    @contact.user = current_user
-    if @contact.save
-      if contact_params[:organization_id].empty?
-        redirect_to new_organization_path(contact_id: @contact.id)
-      else
-        redirect_to contacts_path
-      end
-    else
-      render :new
-    end
+
   end
 
   def export_pdf
@@ -40,6 +31,6 @@ class QuotesController < ApplicationController
   end
 
   def set_quote
-    @quote = quote.find(params[:id])
+    @quote = Quote.find(params[:id])
   end
 end
